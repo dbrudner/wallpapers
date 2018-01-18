@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
+	<style>	
+		body {
+			margin: 0 50px;
+		}
+		
+		.wallpaperName {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-size: 24px;
+		}
+
+		.list-group-item {
+			border: none !important;
+		}
+
+		.attributes-header {
+			text-align: center;
+			font-weight: 700;
+			margin-bottom: 10px;
+			font-family: 'PT Sans', sans-serif;
+			color: #d3d3d3;
+		}
+
+		.attribute {
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		.wallPaperImage {
+			width: 160px;
+			height: 190px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>Wallpapers, bitch</h1>
+			<ul id="wallpapers" class="list-group">
+			</ul>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+	$.get("/api", function(data) {
+		data.map((item) => {
+
+			var li = $("<li>");
+			li.addClass('list-group-item col-xs-4');
+
+			var panelDiv = $("<div class='panel panel-default'>")
+
+			var panelHeader = $("<div>");
+			panelHeader.addClass('panel-heading wallpaperName');
+			panelHeader.text(item.name);
+
+			var panelBody = $("<div>");
+			panelBody.addClass('panel-body');
+
+			var bodyDiv = $("<div>");
+			bodyDiv.addClass('row');
+
+			var leftDiv = $("<div>")
+			leftDiv.addClass('col-xs-6');
+
+			var rightDiv = $("<div>")
+			rightDiv.addClass('col-xs-6');
+
+
+			leftDiv.append(`<img class='wallPaperImage thumbnail' src=${item.sourceImage}>`)
+
+			rightDiv.append(`<div class='attributes-header'>Scores out of 10</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${item.patterned}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Aggressiveness:</strong> ${item.aggression}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Playfulness:</strong> ${item.playfulness}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Contrast:</strong> ${item.contrast}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Colorfulness:</strong> ${item.colorfulness}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Geometric Integrity:</strong> ${item.geometricIntegrity}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Novelty Index:</strong> ${item.novelty}</div>`)
+			rightDiv.append(`<a href=${item.link} target="_blank"><div class='attribute'>See more</div></a>`)
+
+			bodyDiv.append(leftDiv);
+			bodyDiv.append(rightDiv);
+
+
+			panelBody.append(bodyDiv);
+
+			panelDiv.append(panelHeader);
+			panelDiv.append(panelBody);
+
+			li.append(panelDiv);
+
+			$("#wallpapers").append(li);
+		})
+	})
+</script>
+</html>

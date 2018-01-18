@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class='header'>Get a wallpaper</div>
+
+  
+
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newCharacter = {
+        name: $("#name").val().trim(),
+        role: $("#role").val().trim(),
+        age: $("#age").val().trim(),
+        forcePoints: $("#force-points").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/new", newCharacter)
+      .then(function(data) {
+        console.log(data);
+        alert("Adding character...");
+      });
+    });
+  </script>
+
+</body>
+</html>

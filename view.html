@@ -7,9 +7,21 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
 	<style>	
 		body {
-			margin: 0 50px;
-		}
-		
+	        margin: 100px;
+	        background: url(http://dubaifurniture.co/wp-content/uploads/2014/05/fitting-wallpaper.jpg) no-repeat center center fixed; 
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        -o-background-size: cover;
+	        background-size: cover;
+    	}
+
+	    .narrow-container {
+	        background-color: white;
+	        opacity: .92;
+	        padding-bottom: 50px;
+	        padding-top: 30px;
+	    }
+			
 		.wallpaperName {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-size: 24px;
@@ -32,17 +44,27 @@
 		}
 
 		.wallPaperImage {
-			width: 160px;
-			height: 190px;
+			width: 140px;
+			height: 160px;
+			margin-top: 20px;
+		}
+
+		.header {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-size: 64px;
+			margin-bottom: 30px;
+			text-align: center;
 		}
 
 
 	</style>
 </head>
 <body>
-	<h1>Wallpapers, bitch</h1>
-			<ul id="wallpapers" class="list-group">
-			</ul>
+	<div class='narrow-container'>
+		<div class='header'>Wallpapers bro</div>
+		<ul id="wallpapers" class="list-group">
+		</ul>
+	</div>
 </body>
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
@@ -54,7 +76,7 @@
 		data.map((item) => {
 
 			var li = $("<li>");
-			li.addClass('list-group-item col-md-4 col-xs-6');
+			li.addClass('list-group-item col-lg-4 col-md-4 col-xs-6');
 
 			var panelDiv = $("<div class='panel panel-default'>")
 
@@ -75,10 +97,10 @@
 			rightDiv.addClass('col-xs-6');
 
 
-			leftDiv.append(`<img class='wallPaperImage thumbnail' src=${item.sourceImage}>`)
+			leftDiv.append(`<img class='wallPaperImage thumbnail center-block' src=${item.sourceImage}>`)
 
 			rightDiv.append(`<div class='attributes-header'>Scores out of 10</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${item.patterned}</div>`)
+			rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${item.patternStrength}</div>`)
 			rightDiv.append(`<div class='attribute'><strong>Aggressiveness:</strong> ${item.aggression}</div>`)
 			rightDiv.append(`<div class='attribute'><strong>Playfulness:</strong> ${item.playfulness}</div>`)
 			rightDiv.append(`<div class='attribute'><strong>Contrast:</strong> ${item.contrast}</div>`)

@@ -84,6 +84,10 @@ app.get("/view", function(req, res) {
   res.sendFile(path.join(__dirname, "view.html"));
 });
 
+app.get("/add", function(req, res) {
+  res.sendFile(path.join(__dirname, "add.html"));
+});
+
 // // Get all wallpapers
 // app.get("/all", function(req, res) {
 //   res.json(wallpapers);

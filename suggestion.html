@@ -11,8 +11,21 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400i" rel="stylesheet">
 <style>
 
+    
+
     body {
-        margin-bottom: 100px;
+        margin: 100px;
+        background: url(https://www.newhdwallpapers.in/wp-content/uploads/2014/07/Latest-Blue-And-White-HD-Wallpaper.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .narrow-container {
+        background-color: white;
+        opacity: .92;
+        padding-bottom: 50px;
     }
 
     .slidecontainer {
@@ -110,146 +123,144 @@
         font-family: 'PT Sans', sans-serif;
     }
 
+    .button-container {
+        margin-right: 15px;
+    }
+
 </style>
 
 </head>
 <body>
-
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Texture Strength</div>
-        <div class='description text-center margin-right'>Smooth jazz or speed metal?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Smooth
+    <div class='narrow-container'>
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Texture Strength</div>
+            <div class='description text-center margin-right'>Smooth jazz or speed metal?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Smooth
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Rough
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Rough
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="textureStrength">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="textureStrength">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Aggression</div>
-        <div class='description text-center margin-right'>A slow tour of the back nine or twelve rounds of bare knuckle boxing?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Passive
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Aggression</div>
+            <div class='description text-center margin-right'>A slow tour of the back nine or twelve rounds of bare knuckle boxing?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Passive
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Aggressive
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Aggressive
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="aggression">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="aggression">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Playfulness</div>
-        <div class='description text-center margin-right'>Daniel Day-Lewis or Kevin Hart?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Intense
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Playfulness</div>
+            <div class='description text-center margin-right'>Daniel Day-Lewis or Kevin Hart?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Intense
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Playful
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Playful
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="playfulness">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="playfulness">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Activeness</div>
-        <div class='description text-center margin-right'>Sleepy sloth or rabid squirrel?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Inconspicuous
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Activeness</div>
+            <div class='description text-center margin-right'>Sleepy sloth or rabid squirrel?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Inconspicuous
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Energetic
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Energetic
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="activeness">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="activeness">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Contrast</div>
-        <div class='description text-center margin-right'>James Bond or Carrot Top?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Slight Contrast
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Contrast</div>
+            <div class='description text-center margin-right'>James Bond or Carrot Top?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Slight Contrast
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Striking Contrast
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Striking Contrast
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="contrast">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="contrast">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Geometric Integrity</div>
-        <div class='description text-center margin-right'>Art or science?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Smooth Edges
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Geometric Integrity</div>
+            <div class='description text-center margin-right'>Art or science?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Smooth Edges
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Sharp Corners
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Sharp Corners
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="geometricIntegrity">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="geometricIntegrity">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Pattern Strength</div>
-        <div class='description text-center margin-right'>One for all or all for one?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Anomalous
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Pattern Strength</div>
+            <div class='description text-center margin-right'>One for all or all for one?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Anomalous
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Repetitive
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Repetitive
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="patternStrength">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="patternStrength">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Novelty</div>
-        <div class='description text-center margin-right'>Living for a moment or living for a lifetime?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Standard
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Novelty</div>
+            <div class='description text-center margin-right'>Living for a moment or living for a lifetime?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Standard
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Ornamental
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Ornamental
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="novelty">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="novelty">
-    </div>
-    <div class="slidecontainer center-block">
-        <div class='slidecontainerHeader'>Colorfulness</div>
-        <div class='description text-center margin-right'>Monochromatic or a lot of chromatics?</div>
-        <div class='row'>
-            <div class='slideHelper text-left col-xs-6'>
-                Dull
+        <div class="slidecontainer center-block">
+            <div class='slidecontainerHeader'>Colorfulness</div>
+            <div class='description text-center margin-right'>Monochromatic or a lot of chromatics?</div>
+            <div class='row'>
+                <div class='slideHelper text-left col-xs-6'>
+                    Dull
+                </div>
+                <div class='slideHelper text-right col-xs-6'>
+                    Vibrant
+                </div>
             </div>
-            <div class='slideHelper text-right col-xs-6'>
-                Vibrant
-            </div>
+            <input type="range" min="1" max="100" value="50" class="slider" id="colorfulness">
         </div>
-        <input type="range" min="1" max="100" value="50" class="slider" id="colorfulness">
+        <div class='button-container'>
+            <button id='button' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Get Your Wallpaper</button>
+        </div>
     </div>
-
-
-
-    <button id='button' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Get Your Wallpaper</button>
-
     <div class="modal fade" id="modal" role="dialog">
-    <div class="modal-dialog modal-lg">
-    
-        <!-- Modal content-->
-        <div class="modal-content" id='modal-content'">
-        <div class="modal-header" id='modal-header'></div>
-        
-        </div>
-        </div>
-      
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id='modal-content'">
+            <div class="modal-header" id='modal-header'></div>
+            
+            </div>
+        </div>      
     </div>
-  </div>
-
 <script type="text/javascript">
 
     var submitAnswers = () => {

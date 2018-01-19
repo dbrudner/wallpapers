@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400i" rel="stylesheet">
 <style>
+
+    body {
+        margin-bottom: 100px;
+    }
+
     .slidecontainer {
-        width: 80%; /* Width of the outside container */
-        margin-top: 100px;
-        margin-left: 50px;
+        padding: 2% 10%;
+        width: 70%;
+        
     }
 
     /* The slider itself */
@@ -49,48 +55,190 @@
         background: #4CAF50; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
+
+    .bodydiv {
+        margin-top: 20px;
+        border: none !important;
+    }
+
+    .wallpaperName {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 36px;
+    }
+
+    .attributes-header {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: 'PT Sans', sans-serif;
+        color: #d3d3d3;
+    }
+
+    .attribute {
+        font-family: 'PT Sans', sans-serif !important;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    .wallpaperImage {
+        width: 275px;
+        height: 325px;
+        margin-top: 20px;
+    }
+
+    .description {
+        margin-top: 12px;
+        font-family: 'PT Sans', sans-serif;
+        font-style: italic;
+
+    }
+
+    .slidecontainerHeader {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 32px;
+        text-align: center;
+        margin-right: 15px;
+    }
+
+    .margin-right {
+        margin-right: 15px;
+    }
+
+
+    .slideHelper {
+        margin-bottom: 10px;
+        font-family: 'PT Sans', sans-serif;
+    }
+
 </style>
 
 </head>
 <body>
 
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="textureStrength">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Texture Strength</div>
+        <div class='description text-center margin-right'>Smooth jazz or speed metal?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Smooth
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Rough
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="textureStrength">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="aggression">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Aggression</div>
+        <div class='description text-center margin-right'>A slow tour of the back nine or twelve rounds of bare knuckle boxing?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Passive
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Aggressive
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="aggression">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="playfulness">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Playfulness</div>
+        <div class='description text-center margin-right'>Daniel Day-Lewis or Kevin Hart?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Intense
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Playful
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="playfulness">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="activeness">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Activeness</div>
+        <div class='description text-center margin-right'>Sleepy sloth or rabid squirrel?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Inconspicuous
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Energetic
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="activeness">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="contrast">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Contrast</div>
+        <div class='description text-center margin-right'>James Bond or Carrot Top?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Slight Contrast
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Striking Contrast
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="contrast">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="geometricIntegrity">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Geometric Integrity</div>
+        <div class='description text-center margin-right'>Art or science?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Smooth Edges
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Sharp Corners
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="geometricIntegrity">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="patternStrength">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Pattern Strength</div>
+        <div class='description text-center margin-right'>One for all or all for one?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Anomalous
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Repetitive
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="patternStrength">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="novelty">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Novelty</div>
+        <div class='description text-center margin-right'>Living for a moment or living for a lifetime?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Standard
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Ornamental
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="novelty">
     </div>
-    <div class="slidecontainer">
-      <input type="range" min="1" max="100" value="50" class="slider" id="colorfulness">
+    <div class="slidecontainer center-block">
+        <div class='slidecontainerHeader'>Colorfulness</div>
+        <div class='description text-center margin-right'>Monochromatic or a lot of chromatics?</div>
+        <div class='row'>
+            <div class='slideHelper text-left col-xs-6'>
+                Dull
+            </div>
+            <div class='slideHelper text-right col-xs-6'>
+                Vibrant
+            </div>
+        </div>
+        <input type="range" min="1" max="100" value="50" class="slider" id="colorfulness">
     </div>
 
 
 
-    <button id='button'>button</button>
+    <button id='button' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Post Your Wallpaper</button>
+
 
 <script type="text/javascript">
-
-    var submitAnswers = () => {
-
-        var correctAnswers = 0;
 
         var textured = $('#textureStrength').val()/10
         var aggression = $('#aggression').val()/10
@@ -101,48 +249,6 @@
         var patternStrength = $('#patternStrength').val()/10
         var novelty = $('#novelty').val()/10
         var colorfulness = $('#colorfulness').val()/10
-
-        var scores = [textured, aggression, playfulness, activeness, contrast, geometrictIntegrity, patternStrength, novelty, colorfulness]
-
-        console.log(scores);
-
-         $.get("/api", function(data) {
-
-            var bestScore = 500;
-            var recommendation
-            var allScores = []
-
-            console.log(data);
-
-            for (let i=0; i<data.length; i++) {
-                var score = 0;
-                score = score + Math.abs(scores[0] - data[i].textured);
-                score = score + Math.abs(scores[1] - data[i].aggression);
-                score = score + Math.abs(scores[2] - data[i].playfulness);
-                score = score + Math.abs(scores[3] - data[i].activeness);
-                score = score + Math.abs(scores[4] - data[i].contrast);
-                score = score + Math.abs(scores[5] - data[i].geometricIntegrity);
-                score = score + Math.abs(scores[6] - data[i].patternStrength);
-                score = score + Math.abs(scores[7] - data[i].novelty);
-                score = score + Math.abs(scores[8] - data[i].colorfulness);
-                console.log(score);
-                allScores.push(bestScore)
-                if (score < bestScore) {
-                    bestScore = score;
-                    recommendation = data[i]    
-                }
-            }
-            console.log(bestScore)
-            console.log(recommendation)
-        })
-
-    }
-
-       
-
-    $('#button').on('click', function() {
-        submitAnswers();
-    })
 
 </script>
 

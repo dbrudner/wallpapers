@@ -109,6 +109,12 @@
         text-align: center;
     }
 
+    .header {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 48px;
+        text-align: center;
+    }
+
     .slideHelper {
         margin-bottom: 10px;
         font-family: 'PT Sans', sans-serif;
@@ -143,22 +149,23 @@
         </div>      
     </div>
 
-    <div class='header'>Add a Wallpaper</div>
     <div class='narrow-container top-padding'>
+    <div class='header'>Add a Wallpaper</div>
+    <div class=' text-center description'>To add a wallpaper to our server, fill out the form below</div>
         <div class='form-group margins'>
-            <label for='name'>Name</label>
+            <label class='slideHelper' for='name'>Name</label>
             <input type="text" class="form-control" id="name">
         </div>
         <div class='form-group margins'>
-            <label for='name'>Shopping Link</label>
+            <label class='slideHelper' for='name'>Shopping Link</label>
             <input type="text" class="form-control" id="link">
         </div>
         <div class='form-group margins'>
-            <label for='name'>Image URL</label>
+            <label class='slideHelper' for='name'>Image URL</label>
             <input type="text" class="form-control" id="image">
         </div>
         <div class="form-group margins">
-            <label for="comment">Description:</label>
+            <label class='slideHelper' for="comment">Description <span class='description'>(20 words or less)</span></label>
             <textarea class="form-control" rows="3" id="description"></textarea>
         </div>
         <div class="slidecontainer center-block">
@@ -279,7 +286,7 @@
             <input type="range" min="1" max="100" value="0" class="slider" id="colorfulness">
         </div>
         <div class='button-container'>
-            <button id='submit' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Get Your Wallpaper</button>
+            <button id='submit' class='top-margin btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Add Your Wallpaper</button>
         </div>
     </div>
 <script type="text/javascript">

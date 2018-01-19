@@ -1,85 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Star Wars - Express</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400i" rel="stylesheet">
+<style>
+    .slidecontainer {
+        padding: 2% 10%;
+        
+        
+    }
+
+    /* The slider itself */
+    .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 25px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .bodydiv {
+        margin-top: 20px;
+        border: none !important;
+    }
+
+    .wallpaperName {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 36px;
+    }
+
+    .attributes-header {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-family: 'PT Sans', sans-serif;
+        color: #d3d3d3;
+    }
+
+    .attribute {
+        font-family: 'PT Sans', sans-serif !important;
+        font-size: 18px;
+        margin-top: 12px;
+    }
+
+    .wallpaperImage {
+        width: 300px;
+    }
+
+    .description {
+        margin-top: 12px;
+        font-family: 'PT Sans', sans-serif;
+        font-style: italic;
+
+    }
+
+</style>
 
 </head>
 <body>
 
-  <div class="container">
-    <div class="jumbotron">
-      <h1>Star Wars Express</h1>
-      <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
-      <hr>
-      <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Characters</button></a>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="textureStrength">
     </div>
-    <div class="row">
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="aggression">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="playfulness">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="activeness">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="contrast">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="geometricIntegrity">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="patternStrength">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="novelty">
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="100" value="50" class="slider" id="colorfulness">
+    </div>
 
-      <div class="col-lg-12">
 
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><strong>Add Characters</strong></h3>
-          </div>
-          <div class="panel-body">
-            <form method="POST" role="form">
 
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name">
-              </div>
+    <button id='button' data-toggle='modal' data-target='#modal'>button</button>
 
-              <div class="form-group">
-                <label for="role">Role</label>
-                <input type="text" class="form-control" id="role">
-              </div>
-
-              <div class="form-group">
-                <label for="age">Age</label>
-                <input type="text" class="form-control" id="age">
-              </div>
-
-              <div class="form-group">
-                <label for="force-points">Force Points</label>
-                <input type="text" class="form-control" id="force-points">
-              </div>
-
-            </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span class="glyphicon glyphicon-fire"></span> Add to the Force</button>
-            </div>
-          </div>
+    <div class="modal fade" id="modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+        <!-- Modal content-->
+        <div class="modal-content" id='modal-content'">
+        <div class="modal-header" id='modal-header'></div>
+        
         </div>
-
-      </div>
+        </div>
+      
     </div>
   </div>
 
-  <script type="text/javascript">
-    // Question: What does this code do?
-    $("#add-btn").on("click", function(event) {
-      event.preventDefault();
-      var newCharacter = {
-        name: $("#name").val().trim(),
-        role: $("#role").val().trim(),
-        age: $("#age").val().trim(),
-        forcePoints: $("#force-points").val().trim()
-      };
+<script type="text/javascript">
 
-      // Question: What does this code do??
-      $.post("/api/new", newCharacter)
-      .then(function(data) {
-        console.log(data);
-        alert("Adding character...");
-      });
-    });
-  </script>
+    var submitAnswers = () => {
+
+        var correctAnswers = 0;
+
+        var textured = $('#textureStrength').val()/10
+        var aggression = $('#aggression').val()/10
+        var playfulness = $('#playfulness').val()/10
+        var activeness = $('#activeness').val()/10
+        var contrast = $('#contrast').val()/10
+        var geometrictIntegrity = $('#geometricIntegrity').val()/10
+        var patternStrength = $('#patternStrength').val()/10
+        var novelty = $('#novelty').val()/10
+        var colorfulness = $('#colorfulness').val()/10
+
+        var scores = [textured, aggression, playfulness, activeness, contrast, geometrictIntegrity, patternStrength, novelty, colorfulness]
+
+        console.log(scores);
+
+         $.get("/api", function(data) {
+
+            var bestScore = 500;
+            var recommendation
+            var allScores = []
+
+            console.log(data);
+
+            for (let i=0; i<data.length; i++) {
+                var score = 0;
+                score = score + Math.abs(scores[0] - data[i].textured);
+                score = score + Math.abs(scores[1] - data[i].aggression);
+                score = score + Math.abs(scores[2] - data[i].playfulness);
+                score = score + Math.abs(scores[3] - data[i].activeness);
+                score = score + Math.abs(scores[4] - data[i].contrast);
+                score = score + Math.abs(scores[5] - data[i].geometricIntegrity);
+                score = score + Math.abs(scores[6] - data[i].patternStrength);
+                score = score + Math.abs(scores[7] - data[i].novelty);
+                score = score + Math.abs(scores[8] - data[i].colorfulness);
+                console.log(score);
+                allScores.push(bestScore)
+                if (score < bestScore) {
+                    bestScore = score;
+                    recommendation = data[i]    
+                }
+            }
+            modal(recommendation);
+        })
+
+    }
+
+    var modal = recommendation => {
+        console.log(recommendation)
+
+        $('#modal-header').empty();
+        $('#modal-body').remove();
+
+
+        $('#modal-header').append(`<div class='wallpaperName'>${recommendation.name}</div>`)
+
+        var div = $('<div>');
+        div.addClass('bodydiv')
+
+        var bodyDiv = $("<div>");
+        bodyDiv.addClass('row');
+
+        var leftDiv = $("<div>")
+        leftDiv.addClass('col-xs-6');
+
+        var rightDiv = $("<div>")
+        rightDiv.addClass('col-xs-6 attribute');
+
+
+        leftDiv.append(`<img class='wallpaperImage thumbnail center-block' src=${recommendation.sourceImage}>`)
+
+        rightDiv.append(`<div class='attributes-header'>Scores out of 10</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${recommendation.patternStrength}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Aggressiveness:</strong> ${recommendation.aggression}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Playfulness:</strong> ${recommendation.playfulness}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Contrast:</strong> ${recommendation.contrast}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Colorfulness:</strong> ${recommendation.colorfulness}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Geometric Integrity:</strong> ${recommendation.geometricIntegrity}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Novelty Index:</strong> ${recommendation.novelty}</div>`)
+        rightDiv.append(`<div class=description>${recommendation.description}</div>`)
+        rightDiv.append(`<a href=${recommendation.link} target="_blank"><div class='attribute'>See more</div></a>`)
+
+        div.append(leftDiv);
+        div.append(rightDiv);
+
+        $('#modal-header').append('<hr>')
+        $('#modal-header').append(div);
+
+    }
+    
+
+    $('#button').on('click', function() {
+        submitAnswers();
+    })
+
+</script>
 
 </body>
 </html>

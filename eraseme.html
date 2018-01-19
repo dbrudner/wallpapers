@@ -88,6 +88,8 @@
 
 <script type="text/javascript">
 
+    var attributes = ['Textured', 'Aggression', 'Playfulness', 'Activeness', 'Contrast', 'Geometric Integrity', 'Pattern Strength', 'Novelty', 'Colorfulness']
+
     var submitAnswers = () => {
 
         var correctAnswers = 0;
@@ -97,34 +99,32 @@
         var playfulness = $('#playfulness').val()/10
         var activeness = $('#activeness').val()/10
         var contrast = $('#contrast').val()/10
-        var geometrictIntegrity = $('#geometricIntegrity').val()/10
+        var geometrictIntegrity = $('#geometrictIntegrity').val()/10
         var patternStrength = $('#patternStrength').val()/10
         var novelty = $('#novelty').val()/10
-        var colorfulness = $('#colorfulness').val()/10
+        var colorfulness = $('colorfulness').val()/10
 
         var scores = [textured, aggression, playfulness, activeness, contrast, geometrictIntegrity, patternStrength, novelty, colorfulness]
 
-        console.log(scores);
+        var testScores =[1,2,3,4,5,4,7,5,9]
 
-         $.get("/api", function(data) {
+        $.get("/api", function(data) {
 
             var bestScore = 500;
             var recommendation
             var allScores = []
 
-            console.log(data);
-
             for (let i=0; i<data.length; i++) {
                 var score = 0;
-                score = score + Math.abs(scores[0] - data[i].textured);
-                score = score + Math.abs(scores[1] - data[i].aggression);
-                score = score + Math.abs(scores[2] - data[i].playfulness);
-                score = score + Math.abs(scores[3] - data[i].activeness);
-                score = score + Math.abs(scores[4] - data[i].contrast);
-                score = score + Math.abs(scores[5] - data[i].geometricIntegrity);
-                score = score + Math.abs(scores[6] - data[i].patternStrength);
-                score = score + Math.abs(scores[7] - data[i].novelty);
-                score = score + Math.abs(scores[8] - data[i].colorfulness);
+                score = score + Math.abs(testScores[0] - data[i].textured);
+                score = score + Math.abs(testScores[1] - data[i].aggression);
+                score = score + Math.abs(testScores[2] - data[i].playfulness);
+                score = score + Math.abs(testScores[3] - data[i].activeness);
+                score = score + Math.abs(testScores[4] - data[i].contrast);
+                score = score + Math.abs(testScores[5] - data[i].geometricIntegrity);
+                score = score + Math.abs(testScores[6] - data[i].patternStrength);
+                score = score + Math.abs(testScores[7] - data[i].novelty);
+                score = score + Math.abs(testScores[8] - data[i].colorfulness);
                 console.log(score);
                 allScores.push(bestScore)
                 if (score < bestScore) {
@@ -133,15 +133,10 @@
                 }
             }
             console.log(bestScore)
-            console.log(recommendation)
-        })
-
     }
 
-       
-
     $('#button').on('click', function() {
-        submitAnswers();
+        console.log($('#myRange').val())
     })
 
 </script>

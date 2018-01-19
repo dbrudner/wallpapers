@@ -114,6 +114,10 @@
         font-family: 'PT Sans', sans-serif;
     }
 
+    .slight-top-margin {
+        margin-top: 10px;
+    }
+
     .margin-bottom {
         margin-bottom: 10px;
     }
@@ -131,6 +135,15 @@
 </head>
 <body>
 
+    <div class="modal fade" id="modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id='modal-content'">
+            <div class="modal-header" id='modal-header'></div>  
+            </div>
+        </div>      
+    </div>
+
+    <div class='header'>Add a Wallpaper</div>
     <div class='narrow-container top-padding'>
         <div class='form-group margins'>
             <label for='name'>Name</label>
@@ -266,11 +279,66 @@
             <input type="range" min="1" max="100" value="0" class="slider" id="colorfulness">
         </div>
         <div class='button-container'>
-            <button id='submit' class='btn btn-danger center-block'>Add Your Wallpaper</button>
+            <button id='submit' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Get Your Wallpaper</button>
         </div>
     </div>
-    
 <script type="text/javascript">
+
+    var errorModal = () => {
+
+        $('#modal-header').empty();
+        $('#modal-body').remove();
+
+        var div = $("<div>");
+        div.addClass('alert alert-danger slight-top-margin');
+        div.text("Please fill out all fields");
+
+        $("#modal-header").append(div);
+    }
+
+    var modal = (recommendation) => {
+
+        console.log(recommendation)
+
+        $('#modal-header').empty();
+        $('#modal-body').remove();
+
+
+        $('#modal-header').append(`<div class='wallpaperName'>${recommendation.name}</div>`)
+
+        var div = $('<div>');
+        div.addClass('bodydiv')
+
+        var bodyDiv = $("<div>");
+        bodyDiv.addClass('row');
+
+        var leftDiv = $("<div>")
+        leftDiv.addClass('col-xs-6');
+
+        var rightDiv = $("<div>")
+        rightDiv.addClass('col-xs-6 attribute');
+
+
+        leftDiv.append(`<img class='wallpaperImage thumbnail center-block' src=${recommendation.sourceImage}>`)
+
+        rightDiv.append(`<div class='attributes-header'>Scores out of 10</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${recommendation.patternStrength}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Aggressiveness:</strong> ${recommendation.aggression}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Playfulness:</strong> ${recommendation.playfulness}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Contrast:</strong> ${recommendation.contrast}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Colorfulness:</strong> ${recommendation.colorfulness}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Geometric Integrity:</strong> ${recommendation.geometricIntegrity}</div>`)
+        rightDiv.append(`<div class='attribute'><strong>Novelty Index:</strong> ${recommendation.novelty}</div>`)
+        rightDiv.append(`<div class=description>${recommendation.description}</div>`)
+        rightDiv.append(`<a href=${recommendation.link} target="_blank"><div class='attribute'>See more</div></a>`)
+
+        div.append(leftDiv);
+        div.append(rightDiv);
+
+        $('#modal-header').append('<hr>')
+        $('#modal-header').append(div);
+
+    }
 
     var textured = $('#textureStrength').val()/10
     var aggression = $('#aggression').val()/10
@@ -283,6 +351,9 @@
     var colorfulness = $('#colorfulness').val()/10
 
     $('#submit').on('click', function(event) {
+
+        console.log("HI")
+
         event.preventDefault();
 
         var name = $("#name").val();
@@ -299,6 +370,22 @@
         var patternStrength = $('#patternStrength').val()/10
         var novelty = $('#novelty').val()/10
         var colorfulness = $('#colorfulness').val()/10
+
+        var error = false;
+
+        if (!name || !link || !sourceImage || !description) {
+            console.log('errr')
+            $('#warn').text("Please fill out all fields!")
+            var error = true;
+            console.log(error);
+            errorModal();
+            return;
+        }
+
+        console.log('error')
+
+        var error = true;
+
 
         var newWallpaper = {
             routeName: name.toLowerCase(),
@@ -319,30 +406,18 @@
 
         console.log(newWallpaper)
 
-        $.post("/api/new", newWallpaper)
-            .then(function(data) {
-            console.log(data);
-            console.log(newWallpaper)
-        });
+        if (newWallpaper.name && newWallpaper.link && newWallpaper.description && newWallpaper.sourceImage) {
+                $.post("/api/new", newWallpaper)
+                .then(function(data) {
+                console.log(data);
+                console.log(newWallpaper)
+            });
 
+            modal(newWallpaper);    
+        }
+
+        
     })
-
-    // $("#add-btn").on("click", function(event) {
-    //   event.preventDefault();
-    //   var newCharacter = {
-    //     name: $("#name").val().trim(),
-    //     role: $("#role").val().trim(),
-    //     age: $("#age").val().trim(),
-    //     forcePoints: $("#force-points").val().trim()
-    //   };
-
-    //   // Question: What does this code do??
-    //   $.post("/api/new", newCharacter)
-    //   .then(function(data) {
-    //     console.log(data);
-    //     alert("Adding character...");
-    //   });
-    // });
 </script>
 
 </body>

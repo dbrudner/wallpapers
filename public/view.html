@@ -7,12 +7,9 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
 	<style>	
 		
-		html {
-			padding-bottom: 150px;
-		}
 
 		body {
-	        margin: 100px;
+	        margin-top: 100px;
 	        background: url(http://dubaifurniture.co/wp-content/uploads/2014/05/fitting-wallpaper.jpg) no-repeat center center fixed; 
 	        -webkit-background-size: cover;
 	        -moz-background-size: cover;
@@ -24,7 +21,7 @@
 	        background-color: white;
 	        opacity: .85;
 	        padding-bottom: 50px;
-	        margin-top: 150px;
+	        margin-top: 30px;
 	        margin-bottom: 150px;
 	        padding-top: 50px;
 	    }
@@ -56,7 +53,7 @@
 			margin-top: 20px;
 		}
 
-		.header {
+		.head {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-size: 64px;
 			margin-bottom: 30px;
@@ -66,7 +63,7 @@
 	    .navbar {
 	            background-color: white;
 	            opacity: .85;
-	            margin:-100px;
+	            margin-top:-100px;
 	    }
 
 	    .brand {
@@ -84,9 +81,7 @@
 	        margin-bottom: 50px;
     	}
 
-    	.bottom-margin {
-    		margin-bottom: 100px;
-    	}
+
 		
 		img {
 		    cursor: zoom-in;
@@ -97,15 +92,22 @@
 		   color: black;
 		   text-align: center;
 		   opacity: .7;
-		}
-
-		.footer-list {
-			margin-left: 40%;
+		   margin-top: 100px;
+		   width: 100%;
 		}
 
 		.made-by {
 			color:black;
 			text-decoration: none;
+		}
+
+		.footer-list {
+			width: 100%;
+		}
+
+		.containerr {
+			margin: 100px;
+			margin-bottom: 495px !important;
 		}
 
 	</style>
@@ -119,14 +121,16 @@
 			<li><a href="/add">Wallpaperate</a></li>
 			<li><a href="/about">About</a></li>
 	</nav>
-	<div class='narrow-container'>
-		<div class='header'>The List</div>
-		<div class='description text-center'>Wallpapers and wallpapers and wallpapers</div>
-		<ul id="wallpapers" class="list-group bottom-margin">
-		</ul>
+	<div class=containerr>
+		<div class='narrow-container'>
+			<div class='head'>The List</div>
+			<div class='description text-center'>Wallpapers and wallpapers and wallpapers</div>
+			<ul id="wallpapers" class="list-group bottom-margin">
+			</ul>
+		</div>
 	</div>
-	<div class='footer navbar-fixed-bottom'>
-		<ul class='nav navbar-nav footer-list'>
+	<div class='footer navbar-default'>
+		<ul class='nav navbar-nav footer-list navbar-default'>
 			<li><a target="_blank" href='https://www.linkedin.com/in/dave-brudner-a9712094/'>LinkedIn</a></li>
 			<li><a target="_blank" href='https://github.com/dbrudner/'>Github</a></li>
 			<li><a class='made-by'>dbrudne1@gmail.com</a></li>
@@ -165,7 +169,7 @@
 		data.map((item) => {
 
 			var li = $("<li>");
-			li.addClass('list-group-item col-lg-4 col-md-4 col-xs-6');
+			li.addClass('list-group-item col-lg-4 col-md-6 col-xs-12');
 
 			var panelDiv = $("<div class='panel panel-default'>")
 

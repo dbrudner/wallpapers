@@ -2,7 +2,7 @@ const path = require('path');
 
 function hello(app) {
 	app.get("/", function(req, res) {
-		res.sendFile(path.join(__dirname, "../public/index.html"));
+		res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 
 	app.get("/suggestion", function(req, res) {
@@ -18,7 +18,7 @@ function hello(app) {
 	});
 
 	app.get('*', function (req, res) {
-		res.redirect('/');
+		res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 }
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Wallpaperizer - Wallpaperation</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -24,6 +24,8 @@
         background-color: white;
         opacity: .92;
         padding-bottom: 50px;
+        margin: 200px 100px 200px 100px;
+        padding-top: 50px;
     }
 
     .slidecontainer {
@@ -111,7 +113,7 @@
 
     .header {
         font-family: 'Source Sans Pro', sans-serif;
-        font-size: 48px;
+        font-size: 64px;
         text-align: center;
     }
 
@@ -136,6 +138,36 @@
         padding-top: 50px;
     }
 
+    .navbar {
+            background-color: white;
+            opacity: .85;
+            margin:-100px;
+    }
+
+    .brand {
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .padding {
+        padding-right: 100px;
+    }
+
+    .footer {
+           background-color: #f3f3f3;
+           color: black;
+           text-align: center;
+           opacity: .7;
+        }
+
+        .footer-list {
+            margin-left: 40%;
+        }
+
+        .made-by {
+            color:black;
+            text-decoration: none;
+        }
+
 </style>
 
 </head>
@@ -148,10 +180,17 @@
             </div>
         </div>      
     </div>
-
+    <nav class='navbar navbar-default padding'>
+        <a class='navbar-brand brand' href='/index'>Wallpaperizer</a>
+        <ul class='nav navbar-nav navbar-right'>
+            <li><a href="/view">View</a></li>
+            <li><a href="/suggestion">Wallpaperize</a></li>
+            <li><a href="/add">Wallpaperate</a></li>
+            <li><a href="/about">About</a></li>
+    </nav>
     <div class='narrow-container top-padding'>
     <div class='header'>Add a Wallpaper</div>
-    <div class=' text-center description'>To add a wallpaper to our server, fill out the form below</div>
+    <div class=' text-center description'>To add a wallpaper to our site, fill out the form below</div>
         <div class='form-group margins'>
             <label class='slideHelper' for='name'>Name</label>
             <input type="text" class="form-control" id="name">
@@ -288,6 +327,14 @@
         <div class='button-container'>
             <button id='submit' class='top-margin btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Add Your Wallpaper</button>
         </div>
+    </div>
+    <div class='footer navbar-fixed-bottom'>
+        <ul class='nav navbar-nav footer-list'>
+            <li><a target="_blank" href='https://www.linkedin.com/in/dave-brudner-a9712094/'>LinkedIn</a></li>
+            <li><a target="_blank" href='https://github.com/dbrudner/'>Github</a></li>
+            <li><a class='made-by'>dbrudne1@gmail.com</a></li>
+            <li><a class='made-by'>Dave Brudner</a></li>
+        </ul>
     </div>
 <script type="text/javascript">
 

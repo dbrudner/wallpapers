@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Wallpaperizer</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Source+Sans+Pro" rel="stylesheet">
-	<style>	
-		body {
-			margin: 0 50px;
-		}
 		
+	<style>	
+		
+		body {
+	        margin: 100px;
+	        background: url(http://www.pablo-piatti.com/content/6.wallpapers/50.tropical_birds/tropical1.png) no-repeat center center fixed; 
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        -o-background-size: cover;
+	        background-size: cover;
+			overflow-x: hidden;
+    	}
+
+	    .narrow-container {
+	    	margin: 150px;
+	        background-color: white;
+	        opacity: .92;
+	        padding-bottom: 50px;
+	        padding-top: 30px;
+	    }
 		.wallpaperName {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-size: 24px;
@@ -31,57 +46,142 @@
 			font-family: 'PT Sans', sans-serif;
 		}
 
+		.header {
+			font-family: 'PT Sans', sans-serif;
+			font-size: 64px;
+			text-align: center;
+		}
+
+		.description {
+			font-size: 36px;
+	        margin-top: 36px;
+	        font-family: 'PT Sans', sans-serif;
+	        font-style: italic;
+			text-align: center;
+    	}
+
+    	.navbar {
+    		background-color: white;
+    		opacity: .85;
+    		margin:-100px;
+    	}
+
+    	.brand {
+	        font-family: 'PT Sans', sans-serif;
+    	}
+
+		.padding {
+			padding-right: 100px;
+		}
+
+		.image {
+			width: 350px;
+			height: 300px;
+		}
+
+		.img-container {
+			padding-top: 50px;
+		}
+
+		.icon {
+			margin-top: 10px;
+			width: 50px;
+			height: 50px;
+		}
+
+		 img {
+		    cursor: zoom-in;
+		 }
+
+		 .footer {
+		   background-color: #f3f3f3;
+		   color: black;
+		   text-align: center;
+		   opacity: .7;
+		}
+
+		.footer-list {
+			width: 112%;
+			margin-left: -100px;
+			margin-right: -100px;
+		}
+
+		.made-by {
+			color:black;
+			text-decoration: none;
+		}
 
 	</style>
 </head>
 <body>
-	<h1>Wallpapers, bitch</h1>
-	<ul id="wallpapers" class="list-group">
-	</ul>
+	<nav class='navbar navbar-default padding'>
+		<a class='navbar-brand brand' href='#'>Wallpaperizer</a>
+		<ul class='nav navbar-nav navbar-right'>
+			<li><a href="/view">View</a></li>
+			<li><a href="/suggestion">Wallpaperize</a></li>
+			<li><a href="/add">Wallpaperate</a></li>
+			<li><a href="/about">About</a></li>
+	</nav>
+	<div class='narrow-container'>
+		<div class='header text-center'>Wallpaperizer</div>
+		<img class='icon center-block' src='https://cdn3.iconfinder.com/data/icons/design/100/paint_roller_1-512.png'>
+		<div class='description'>A site for wallpaper people </div>
+		<hr>
+		<div class='img-container row'>
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='https://i.pinimg.com/736x/c9/4f/01/c94f012c4bcbc1918ddcb9de126569f0--rich-people-contemporary-art.jpg'>
+			</div>
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='https://cdn.wallpaperdirect.com/shared-assets/images/products/092163home.jpg'>
+			</div> 
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOtKhByi2Xw64V2oHsklr0_DNiHJZN8P1aYtQUriV2w1VuHcV5'>
+			</div>
+		</div>
+		<div class='img-container row'>
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='https://cdn.wallpaperdirect.com/shared-assets/images/products/139537home.jpg'>
+			</div>
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='http://thehighwall.com/main/images/design-styles/Floral.jpg'>
+			</div> 
+			<div class='col-sm-12 col-md-6 col-lg-4'>
+				<img class='image img-responsive thumbnail center-block' src='https://aspiringwalls.co.nz/wp-content/uploads/2017/02/BlackNWhite_J218-09-hero-homepage.jpg'>
+			</div>
+		</div>
+	</div>
+	<div class='footer navbar-default'>
+		<ul class='nav navbar-nav footer-list navbar-default'>
+			<li><a target="_blank" href='https://www.linkedin.com/in/dave-brudner-a9712094/'>LinkedIn</a></li>
+			<li><a target="_blank" href='https://github.com/dbrudner/'>Github</a></li>
+			<li><a class='made-by'>dbrudne1@gmail.com</a></li>
+			<li><a class='made-by'>Dave Brudner</a></li>
+		</ul>
+	</div>
+	<div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+	    <div class="modal-dialog modal-lg" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	        </div>
+	        <div class="modal-body">
+	          <img src="" class="enlargeImageModalSource" style="width: 100%;">
+	        </div>
+	      </div>
+	    </div>
+	</div>
 </body>
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-	$.get("/api", function(data) {
-		data.map((item) => {
-
-			var li = $("<li>");
-			li.addClass('list-group-item col-xs-4');
-			li.append(`<div class='wallpaperName'>${item.name}</div>`)
-			li.append('<hr>')
-
-			var bodyDiv = $("<div>");
-			bodyDiv.addClass('row');
-
-			var leftDiv = $("<div>")
-			leftDiv.addClass('col-xs-6');
-
-			var rightDiv = $("<div>")
-			rightDiv.addClass('col-xs-6');
-
-
-			leftDiv.append(`<img class='wallpaperImage thumbnail center-block' src=${item.sourceImage} width='200px' height='200px'>`)
-
-			rightDiv.append(`<div class='attributes-header'>Scores out of 10</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Pattern Strength:</strong> ${item.patterned}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Aggressiveness:</strong> ${item.aggression}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Playfulness:</strong> ${item.playfulness}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Contrast:</strong> ${item.contrast}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Colorfulness:</strong> ${item.colorfulness}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Geometric Integrity:</strong> ${item.geometricIntegrity}</div>`)
-			rightDiv.append(`<div class='attribute'><strong>Novelty Index:</strong> ${item.novelty}</div>`)
-			rightDiv.append(`<a href=${item.link} target="_blank"><div class='attribute'>See more</div></a>`)
-
-			bodyDiv.append(leftDiv);
-			bodyDiv.append(rightDiv);
-
-			li.append(bodyDiv);
-
-			$("#wallpapers").append(li);
-		})
-	})
+	$(function() {
+    	$('img').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+	});
 </script>
 </html>

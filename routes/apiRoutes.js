@@ -1,6 +1,6 @@
 function apiRoutes(app, wallpapers) {
 
-    app.get('/api/wallpapers', function(req, res) {
+    app.get('/api', function(req, res) {
         res.json(wallpapers);
     })
 
@@ -17,6 +17,13 @@ function apiRoutes(app, wallpapers) {
             }
             res.json(false);
         }
+    });
+
+    app.post("/api/new", function(req, res) {
+        var newwallpaper = req.body;
+        newwallpaper.routeName = newwallpaper.name.replace(/\s+/g, "").toLowerCase();
+        wallpapers.push(newwallpaper);
+        res.json(newwallpaper);
     });
 }
 

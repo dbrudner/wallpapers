@@ -1,9 +1,0 @@
-Textured/solid
-Light/darkness
-aggressive/calm
-playful/serious
-Active/Passive
-Contrast
-Patterned/Random
-Novelty/Standard
-BlackWhite/Color

@@ -24,30 +24,15 @@ app.use(bodyParser.json());
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
-htmlRoutes(app);
 apiRoutes(app, wallpapers);
+htmlRoutes(app);
+
 
 // // Get all wallpapers
 // app.get("/all", function(req, res) {
 //   res.json(wallpapers);
 // });
 
-// Search for Specific Character (or all wallpapers) - provides JSON
-app.get("/api/:wallpapers?", function(req, res) {
-  var papers = req.params.wallpapers;
-
-  if (papers) {
-    papers;
-
-    for (var i = 0; i < wallpapers.length; i++) {
-      if (papers === wallpapers[i].routeName) {
-        res.json(wallpapers[i]);
-      }
-    }
-    res.json(false);
-  }
-  res.json(wallpapers);
-});
 
 // Create New wallpapers - takes in JSON input
 app.post("/api/new", function(req, res) {

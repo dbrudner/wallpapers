@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Wallpaperizer - Wallpaperize</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -15,7 +15,7 @@
 
     body {
         margin: 100px;
-        background: url(https://www.newhdwallpapers.in/wp-content/uploads/2014/07/Latest-Blue-And-White-HD-Wallpaper.jpg) no-repeat center center fixed; 
+        background: url(http://www.brucall.com/wp-content/uploads/2017/08/interior-interior-design-hd-wallpaper-40-design-ideas-as-beauteous-wall-paper-cute.jpg) no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -24,8 +24,10 @@
 
     .narrow-container {
         background-color: white;
-        opacity: .92;
+        opacity: .8;
         padding-bottom: 50px;
+        margin: 200px 100px 200px 100px;
+        padding-top: 50px;
     }
 
     .slidecontainer {
@@ -120,11 +122,57 @@
         margin-bottom: 10px;
     }
 
+    .navbar {
+            background-color: white;
+            opacity: .85;
+            margin: -100px;
+    }
+
+    .brand {
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .padding {
+        padding-right: 100px;
+    }
+
+    .header {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 64px;
+        text-align: center;
+    }
+
+     .footer {
+           background-color: #f3f3f3;
+           color: black;
+           text-align: center;
+           opacity: .7;
+        }
+
+        .footer-list {
+            margin-left: 40%;
+        }
+
+        .made-by {
+            color:black;
+            text-decoration: none;
+        }
+
 </style>
 
 </head>
 <body>
+    <nav class='navbar navbar-default padding'>
+        <a class='navbar-brand brand' href='#'>Wallpaperizer</a>
+        <ul class='nav navbar-nav navbar-right'>
+            <li><a href="/view">View</a></li>
+            <li><a href="/suggestion">Wallpaperize</a></li>
+            <li><a href="/add">Wallpaperate</a></li>
+            <li><a href="/about">About</a></li>
+    </nav>
     <div class='narrow-container'>
+        <div class='header'>Get a Wallpaper</div>
+        <div class=' text-center description'>Designed by scientists</div>
         <div class="slidecontainer center-block">
             <div class='slidecontainerHeader'>Texture Strength</div>
             <div class='description text-center margin-right margin-bottom'>Smooth jazz or speed metal?</div>
@@ -245,6 +293,14 @@
         <div class='button-container'>
             <button id='button' class='btn btn-danger center-block' data-toggle='modal' data-target='#modal'>Get Your Wallpaper</button>
         </div>
+    </div>
+    <div class='footer navbar-fixed-bottom'>
+        <ul class='nav navbar-nav footer-list'>
+            <li><a target="_blank" href='https://www.linkedin.com/in/dave-brudner-a9712094/'>LinkedIn</a></li>
+            <li><a target="_blank" href='https://github.com/dbrudner/'>Github</a></li>
+            <li><a class='made-by'>dbrudne1@gmail.com</a></li>
+            <li><a class='made-by'>Dave Brudner</a></li>
+        </ul>
     </div>
     <div class="modal fade" id="modal" role="dialog">
         <div class="modal-dialog modal-lg">
